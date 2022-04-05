@@ -41,7 +41,7 @@ done
 paste mirror new > final
 repo=$(cat final|awk '{print NF, $0}' | sort -k1,1rn -k3 -n | cut -d' ' -f2-|head -n1|awk '{print $1}')
 
-echo -e "\n\n\n \e[96Now we have Set best Mirror Repo to you Kali-Linux\n\n Try Now  sudo apt update    \n Happy Hacking :) @raoshaab" 
+echo -e "\n\n\n \e[96  Now we have Set best Mirror Repo to you Kali-Linux \n\n Try Now  sudo apt update    \n Happy Hacking :) @raoshaab" 
  
 sudo sed -i 's/^/#/g' "/etc/apt/sources.list"
 echo "deb http://$repo/kali kali-rolling main contrib non-free" |sudo tee -a /etc/apt/sources.list >/dev/null 
