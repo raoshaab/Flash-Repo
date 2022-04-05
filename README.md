@@ -10,5 +10,5 @@ This script will work in Kali linux only .
 
 # Command to run this script 
 ```
-curl -sL https://tinyurl.com/flas-repo | sudo bash  
+curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
