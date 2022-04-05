@@ -3,7 +3,7 @@
 
 #banner
 
-echo -e "\e[35m "   
+echo -e "\e[32m "   
 printf "   __   _  \n"            _                                            
 printf "  / _| | |               | |                                           \n"
 printf " | |_  | |   __ _   ___  | |__    ______   _ __    ___   _ __     ___  \n"
