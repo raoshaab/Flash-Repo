@@ -11,3 +11,7 @@ This script will work only in Kali-linux.
 ```
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
+
+# Demo 
+
+![](https://github.com/raoshaab/Flash-Repo/blob/main/static/repo.gif)
