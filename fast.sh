@@ -82,7 +82,8 @@ bann="
 while IFS= read -r -n 1 -d '' c; do   printf '\e[38;5;%dm%s\e[0m'  "$((RANDOM%255+1))" "$c"; done <<<$bann
 
 #checking for root access 
-if [ whoami == root  ]
+user=$(whoami)
+if [[ $user == "root"  ]]
 then 
     echo ' '
 else 
