@@ -1,4 +1,14 @@
 # Flash-Repo
+```
+  ____   _                 _                                            
+ / ___| | |               | |                                            
+| |_    | |   __ _   ___  | |__    ______   _ ___    ___    _ __      ___  
+|  _|   | |  / _  | / __| | '_ \  |__==__| | |_|_|  / _ \  | '_  \   / _ \ 
+| |     | | | (_| | \__ \ | | | |          | |     |  __/  | | _) | | (_) |
+|_|     |_|  \__'_| |___/ |_| |_|          |_|      \___|  | |___/   \___/ 
+                                                           | |             
+                                                           |_|            ```
+                                                           
 Flash-Repo will help to choose the best Kali Linux Repository with your current region. If you have set-up new Kali-linux or Ubuntu . While installing , updating pacakges, Even if you have a good Internet speed still facing the speed issue ?
 Here this script will help you to choose the best mirror automatically. 
 
