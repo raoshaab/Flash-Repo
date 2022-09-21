@@ -21,9 +21,10 @@ Here this script will help you to choose the best mirror automatically.
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
 
-#
-[![asciicast](https://asciinema.org/a/522908.svg)](https://asciinema.org/a/522908)
 
-# New update  
+![GIF](https://user-images.githubusercontent.com/49671176/191538745-89d33671-29b4-4ea4-ba47-32dcc145aa6c.gif)
+
+
+## Checking Speed after new update  
 
 [repo-1.webm](https://user-images.githubusercontent.com/49671176/191512043-7a742445-515f-4f43-8b72-782041b7bd30.webm)
