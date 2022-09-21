@@ -23,4 +23,4 @@ curl -sL https://tinyurl.com/flash-repo | sudo bash
 
 # Demo 
 
-![](https://github.com/raoshaab/Flash-Repo/blob/main/static/repo-1.gif)
+![](https://github.com/raoshaab/Flash-Repo/blob/main/static/repo-1.mp4)
