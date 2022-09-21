@@ -1,4 +1,4 @@
-# Flash-Repo
+## Flash-Repo
 ```
   ____   _                 _                                            
  / ___| | |               | |                                            
@@ -16,7 +16,7 @@ Here this script will help you to choose the best mirror automatically.
 
 ## No need to search again and agian for Kali linux or Ubuntu fast mirror Repository on Internet , just hit the script and it will set automatically in your system.
 
-# Try now
+## Try now
 ```
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
