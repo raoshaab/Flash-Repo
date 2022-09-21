@@ -4,7 +4,7 @@ Here this script will help you to choose the best mirror automatically.
 
 ## No need to search again and agian for Fast Kali linux mirror Repository on Internet , just hit the script and it will set automatically in your system.
 
-# Installtion 
+# Try 
 ```
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
