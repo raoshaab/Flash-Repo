@@ -21,6 +21,6 @@ Here this script will help you to choose the best mirror automatically.
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
 
-# Demo 
+# New update  
 
-![](https://github.com/raoshaab/Flash-Repo/blob/main/static/repo-1.mp4)
+[repo-1.webm](https://user-images.githubusercontent.com/49671176/191512043-7a742445-515f-4f43-8b72-782041b7bd30.webm)
