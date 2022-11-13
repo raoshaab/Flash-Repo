@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-#banner
+#author: github.com/raoshaab
 
 
 #functions 
