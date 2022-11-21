@@ -1,4 +1,6 @@
-## Flash-Repo
+<h1 align="center">
+Flash-Repo
+</h1>  
 ```
   ____   _                 _                                            
  / ___| | |               | |                                            
@@ -9,7 +11,7 @@
                                                            | |             
                                                            |_|           
                                                            
-```
+``` 
 ## 💥 Introduction                                                            
 Flash-Repo will help to choose the best Kali Linux Repository with your current region. If you have set-up new Kali-linux or Ubuntu . While installing , updating pacakges, Even if you have a good Internet speed still facing the speed issue ?
 Here this script will help you to choose the best mirror automatically. 
