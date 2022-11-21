@@ -22,7 +22,7 @@ Here this script will help you to choose the best mirror automatically.
 
 
 
-## 🛠️ Try now
+## 🛠️ Usage
 ```
 curl -sL https://tinyurl.com/flash-repo | sudo bash  
 ```
