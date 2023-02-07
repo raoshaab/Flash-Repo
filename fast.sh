@@ -18,13 +18,14 @@ function kali(){
     done
     wait
     #combine result 
-      
     repo=$(cat new|grep -e [0-9]|sort -n|head -n1|awk '{print $2}') 
     
     sudo sed -i 's/^/#/g' "/etc/apt/sources.list"
     echo "deb http://$repo/kali kali-rolling main contrib non-free" |sudo tee -a /etc/apt/sources.list >/dev/null 
     echo -e "\n\n\n \e[93mFast Mirror Repo set\n\n \e[96mTry Now with \e[91msudo apt update    \n\e[95m @raoshaab :)"
     sudo rm  -r $car 2>/dev/null
+    sudo wget https://archive.kali.org/archive-key.asc -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc 
+    
  
 }
 
