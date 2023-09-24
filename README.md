@@ -1,7 +1,8 @@
 <h1 align="center">
 Flash-Repo
 
-![](https://visitor-badge.glitch.me/badge?page_id=raoshaab.flash-repo)
+  [![HitCount](https://hits.dwyl.com/raoshaab/raoshaab/Flash-Repo.svg?style=flat-square)](http://hits.dwyl.com/raoshaab/raoshaab/Flash-Repo)
+
 
 </h1>
 No need to search again and agian for Kali linux or Ubuntu fast mirror Repository on Internet , just hit the script and it will set automatically in your system.
