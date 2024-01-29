@@ -4,34 +4,30 @@
 
 #functions 
 function kali(){
-    car='/tmp/fast-repo-dev'
-    mkdir $car 2>/dev/null && cd $car 2>/dev/null
-    curl -s http://http.kali.org/README.mirrorlist -k |grep "this country" -A 20|grep http|cut -d '/' -f3|sort -u > mirror
-    a=$(cat mirror)
+    current_dir='/tmp/fast-repo-dev'
+    mkdir $current_dir 2>/dev/null 
+    cd $current_dir 2>/dev/null
+    mirror=$(curl -s http://http.kali.org/README?mirrorlist |grep    '<td style="text-align: right;"><a href="'|egrep 'http://.+$' -o|cut -d '"' -f1|sed 's/README//g'|head  -n1)
+    
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`)/.......  \e[0m'
     echo -e '\n\n\n' 
 
-    #checking the mirror latency 
-    for i in  $(cat mirror)
-    do
-    echo $(ping -c4 -w5 $i|grep rtt |cut -d '/' -f5)   $i  >> new 2>/dev/null & 
-    done
-    wait
-    #combine result 
-    repo=$(cat new|grep -e [0-9]|sort -n|head -n1|awk '{print $2}') 
+   #Speed Checking removed, As all the mirrors are already in order
+
     
     sudo sed -i 's/^/#/g' "/etc/apt/sources.list"
-    echo "deb http://$repo/kali kali-rolling main contrib non-free" |sudo tee -a /etc/apt/sources.list >/dev/null 
+    echo "deb http://$mirror/kali kali-rolling main contrib non-free" |sudo tee -a /etc/apt/sources.list >/dev/null 
     echo -e "\n\n\n \e[93mFast Mirror Repo set\n\n \e[96mTry Now with \e[91msudo apt update    \n\e[95m @raoshaab :)"
-    sudo rm  -r $car 2>/dev/null
+    sudo rm  -r $current_dir 2>/dev/null
     sudo wget https://archive.kali.org/archive-key.asc -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc 
     
  
 }
 
 function ubuntu(){
-    car='/tmp/fast-repo-dev'
-    mkdir $car 2>/dev/null && cd $car 2>/dev/null
+    current_dir='/tmp/fast-repo-dev'
+    mkdir $current_dir 2>/dev/null 
+    cd $current_dir 2>/dev/null
     curl -sL http://mirrors.ubuntu.com/mirrors.txt > mirrors
     mirror=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt | cut -d '/' -f3|sort -u)
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`).......  \e[0m'
