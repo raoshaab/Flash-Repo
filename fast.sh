@@ -35,7 +35,7 @@ function ubuntu(){
     mirror=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt|cut -d'/' -f3  )
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`).......  \e[0m'
     echo -e '\n\n\n' 
-    ping -c4 -w5 google.com 
+    
 
     #checking the mirror latency 
     for i in  $(echo $mirror)
@@ -64,6 +64,7 @@ function ubuntu(){
 
     #Cleaning Up 
     sudo rm  -r $current_dir 2>/dev/null
+    ping -c4 8.8.8.8 
 }
 
 
