@@ -26,7 +26,12 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: sudo bash fast.sh  
+      - name: Update the mirror
+        run: | 
+            cat  /etc/apt/sources.list
+            sudo apt update   
+            sudo bash fast.sh
+            cat  /etc/apt/sources.list
+            sudo apt update 
 
      
