@@ -7,12 +7,14 @@ function kali(){
     current_dir='/tmp/fast-repo-dev'
     mkdir $current_dir 2>/dev/null 
     cd $current_dir 2>/dev/null
+    
+    #Get the mirror
     mirror=$(curl -s http://http.kali.org/README?mirrorlist |grep    '<td style="text-align: right;"><a href="'|egrep 'http://.+$' -o|cut -d '"' -f1|sed 's/README//g'|head  -n1)
     
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`)/.......  \e[0m'
     echo -e '\n\n\n' 
 
-   #Speed Checking removed, As all the mirrors are already in order
+   #Note: Speed Checking function removed, As all the mirrors are already Checked and in order
 
     
     sudo sed -i 's/^/#/g' "/etc/apt/sources.list"
@@ -21,32 +23,23 @@ function kali(){
     sudo rm  -r $current_dir 2>/dev/null
     sudo wget -q http://archive.kali.org/archive-key.asc -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc 
     
- 
 }
 
 function ubuntu(){
     current_dir='/tmp/fast-repo-dev'
     mkdir $current_dir 2>/dev/null 
     cd $current_dir 2>/dev/null
-    curl -sL http://mirrors.ubuntu.com/mirrors.txt > mirrors
-    mirror=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt | cut -d '/' -f3|sort -u)
+    
+    #Get the mirror
+    fast_server=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt |head -n1 )
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`).......  \e[0m'
     echo -e '\n\n\n' 
  
 
-    #checking the mirror latency 
-    for i in  $(echo $mirror)
-    do
-    echo $(ping -c4 -w5 $i|grep rtt |cut -d '/' -f5)   $i  >> new 2>/dev/null & 
-    done
-    wait
+    #Note: Speed Checking fucntion removed, As all the mirrors are already Checked and in order
+     
+    #setting the mirror /etc/apt/sources.list
     
-    repo=$(cat new|grep -e [0-9]|sort -n|head -n1|awk '{print $2}' ) 
-    #echo $repo
-    fast_server=$(cat mirrors|grep  $repo|head -n1) 
-    #echo $fast_server
-    
-    #setting the etc\apt\sources.list
     code=$(lsb_release -c|awk '{print $2}')
     sudo sed -i 's/^/#/g' "/etc/apt/sources.list"
 
@@ -58,7 +51,8 @@ function ubuntu(){
     echo -e "\n\n\n \e[93mFast Mirror Repo set\n\n \e[96mTry Now with \e[91msudo apt update    \n\e[95m @raoshaab :)"
 
 
-    sudo rm  -r $car 2>/dev/null
+    #Cleaning Up 
+    sudo rm  -r $current_dir 2>/dev/null
 }
 
 
