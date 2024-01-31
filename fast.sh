@@ -31,13 +31,23 @@ function ubuntu(){
     cd $current_dir 2>/dev/null
     
     #Get the mirror
-    fast_server=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt |head -n1 )
+    curl -sL http://mirrors.ubuntu.com/mirrors.txt > mirrors
+    mirror=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt|cut -d'/' -f3  )
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`).......  \e[0m'
     echo -e '\n\n\n' 
  
 
-    #Note: Speed Checking fucntion removed, As all the mirrors are already Checked and in order
-     
+    #checking the mirror latency 
+    for i in  $(echo $mirror)
+    do
+    echo $(ping -c4 -w5 $i|grep rtt |cut -d '/' -f5)   $i  >> new 2>/dev/null & 
+    done
+    wait
+
+    #get repo 
+    repo=$(cat new|grep -e [0-9]|sort -n|head -n1|awk '{print $2}' ) 
+    fast_server=$(cat mirrors|grep  $repo|head -n1) 
+    
     #setting the mirror /etc/apt/sources.list
     
     code=$(lsb_release -c|awk '{print $2}')
