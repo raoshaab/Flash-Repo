@@ -35,18 +35,19 @@ function ubuntu(){
     mirror=$(curl -sL http://mirrors.ubuntu.com/mirrors.txt|cut -d'/' -f3  )
     echo -e  '\e[32mChecking the Best Mirror ;)  Hold on ヽ(´▽`).......  \e[0m'
     echo -e '\n\n\n' 
- 
+    ping -c4 -w5 google.com 
 
     #checking the mirror latency 
     for i in  $(echo $mirror)
     do
-    echo $(ping -c4 -w5 $i|grep rtt |cut -d '/' -f5)   $i  >> new 2>/dev/null & 
+    echo $(ping -c4 -w5 $i|grep rtt |cut -d '/' -f5)   $i  >> new 
     done
     wait
 
     #get repo 
+    
     repo=$(cat new|grep -e [0-9]|sort -n|head -n1|awk '{print $2}' ) 
-    fast_server=$(cat mirrors|grep  $repo|head -n1) 
+    fast_server=$(cat mirrors|grep $repo|head -n1) 
     
     #setting the mirror /etc/apt/sources.list
     
