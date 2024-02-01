@@ -64,7 +64,7 @@ function ubuntu(){
 
     #Cleaning Up 
     sudo rm  -r $current_dir 2>/dev/null
-    ping -c4 8.8.8.8 
+    
 }
 
 
