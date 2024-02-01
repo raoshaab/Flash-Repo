@@ -28,9 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Update the mirror
         run: | 
-            
-            echo "ping -c4 8.8.8.8"
-            sudo ping -c4 8.8.8.8 
             cat  /etc/apt/sources.list
             sudo apt update   
             sudo bash fast.sh
